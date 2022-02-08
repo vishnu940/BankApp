@@ -14,7 +14,7 @@
 
                                         B:Event binding using $event - (event)="function call($event)"
 
-                                        C:Template referencing variable
+                                        C:Template referencing variable -(#variable name)
 
 
  

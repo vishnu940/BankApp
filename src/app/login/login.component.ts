@@ -36,9 +36,13 @@ export class LoginComponent implements OnInit {
      
    }
 
-  login(){
-    var accountnumber=this.acno
-    var password=this.pswd
+  login(a:any,p:any){
+    // var accountnumber=this.acno
+    // var password=this.pswd
+    var accountnumber=a.value
+    var password=p.value
+    // console.log(a.value,p.value,"account number,password");
+    
     let dataset=this.account_details
     
     if(accountnumber in dataset){
