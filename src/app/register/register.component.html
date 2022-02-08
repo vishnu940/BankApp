@@ -5,18 +5,17 @@
 
             <div class="main">
                 <h4 style="font-size: 20px;" class="h1">Welcome to Yes Bank</h4>
-                <h4 style="font-size: 20px; color: #6c757d;">{{lbl}}</h4><br>
+                <h4 style="font-size: 20px; color: #6c757d;"></h4><br>
 
-                <!-- <input id="accnotext" type="text" class="text" placeholder="Account number" [value]="account"><br><br> -->
+                <input id="unname" type="text" class="text" placeholder="User name" [(ngModel)]="uname"><br><br>
 
                 <input id="accnotext" type="text" class="text" placeholder="Account number" [(ngModel)]="acno"><br><br>
 
                 <input id="pwdtext" type="password" class="text" placeholder="Password" [(ngModel)]="pswd"><br> <br>
 
-                <input type="submit" value="Log In" class="button butefct" (click)="login()"> <br>
-                <a class="textfp" href="#">Forgotten password?</a>
+                <input type="submit" value="Register" class="button butefct" (click)="register()"> <br>
+                <a class="textfp" href="#">Log In</a>
                 <div class="line"></div>
-                <input type="button" value="Create New Account" class="button button1 butefct" (click)="Registerlink()"> <br><br>
 
             </div>
         </div>

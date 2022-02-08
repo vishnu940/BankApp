@@ -15,6 +15,12 @@
                                         B:Event binding using $event - (event)="function call($event)"
 
                                         C:Template referencing variable -(#variable name)
+                                
+                                 3.2 Two way binding
+
+                                    A:NgModel -(Defined in FormsModules / syntax"[(ngModel)]="variable name"")
+
+                            4. Dependency injection
 
 
  

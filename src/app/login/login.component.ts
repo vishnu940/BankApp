@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,6 +10,7 @@ export class LoginComponent implements OnInit {
   lbl='Your Perfect Banking Partner'
   username:any
   password:any
+  account="Account number please"
   acno=""
   pswd=""
 
@@ -19,30 +21,22 @@ export class LoginComponent implements OnInit {
     1003:{name:"ravi", accno:1003, password:"testfour",amount:10000},
 }
 
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
 
   accChange(event:any){
-    this.acno=event.target.value
-    // console.log(this.acno,"account number");
-    
-     
+    this.acno=event.target.value 
    }
    pwdChange(event:any){
      this.pswd=event.target.value
-    //  console.log(this.pswd,"password");
-     
    }
 
-  login(a:any,p:any){
-    // var accountnumber=this.acno
-    // var password=this.pswd
-    var accountnumber=a.value
-    var password=p.value
-    // console.log(a.value,p.value,"account number,password");
-    
+  login(){
+    var accountnumber=this.acno
+    var password=this.pswd
+
     let dataset=this.account_details
     
     if(accountnumber in dataset){
@@ -56,5 +50,9 @@ export class LoginComponent implements OnInit {
     else{
       window.alert("Account number does not exist")
     }
+  }
+  Registerlink()
+  {
+    this.router.navigateByUrl('register')
   }
 }
