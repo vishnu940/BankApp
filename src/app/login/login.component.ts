@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataserviceService } from '../Services/dataservice.service';
 
 @Component({
   selector: 'app-login',
@@ -14,14 +15,7 @@ export class LoginComponent implements OnInit {
   acno=""
   pswd=""
 
-  account_details:any={
-    1000:{name:"ajay", accno:1000, password:"testone",amount:5000},
-    1001:{name:"vijay", accno:1001, password:"testtwo",amount:3000},
-    1002:{name:"ram", accno:1002, password:"testthree",amount:7000},
-    1003:{name:"ravi", accno:1003, password:"testfour",amount:10000},
-}
-
-  constructor(private router:Router) { }
+  constructor(private router:Router,private dataservice:DataserviceService) { }
 
   ngOnInit(): void {
   }
@@ -37,11 +31,12 @@ export class LoginComponent implements OnInit {
     var accountnumber=this.acno
     var password=this.pswd
 
-    let dataset=this.account_details
+    let dataset=this.dataservice.account_details
     
     if(accountnumber in dataset){
       if(password == dataset[accountnumber]['password']){
         window.alert("Login success")
+        this.router.navigateByUrl('home')
       }
       else{
         window.alert("Incorrect account number or password")
