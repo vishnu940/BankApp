@@ -1,1 +1,45 @@
-<p>homepage works!</p>
+<div class="container">
+<div class="row">
+    <div class="col-sm-12">
+        <a class="btn btn-outline-primary logout" routerLink="">Logout</a>
+    </div>
+</div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+
+            <div class="main">
+                <h4>Deposit Amount</h4><br>
+                <form (ngSubmit)="deposit()">
+                    <input id="log" type="text" class="text" placeholder="Account number" name="account" [(ngModel)]="accno"><br><br>
+                    <input id="pass" type="password" class="text" placeholder="Password" name="password" [(ngModel)]="passwd"><br> <br>
+                    <input id="amo" type="text" class="text" placeholder="Amount" name="amt" [(ngModel)]="amount"><br><br>
+                    <!-- <input type="submit" value="Withdrawal" class="button butefct" onclick="Bank.withdraw()"> <br><br> -->
+                    <input type="submit" value="Deposit" class="button button1 butefct"> <br><br>
+                </form>
+            </div>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <div class="main">
+                <h4>withdraw Amount</h4><br>
+                <form (ngSubmit)="withdraw()">
+                    <input id="log" type="text" class="text" placeholder="Account number" name="wacno" [(ngModel)]="waccno"><br><br>
+                    <input id="pass" type="password" class="text" placeholder="Password" name="wpwd" [(ngModel)]="wpasswd"><br> <br>
+                    <input id="amo" type="text" class="text" placeholder="Amount" name="wamt" [(ngModel)]="wamount"><br><br>
+                    <input type="submit" value="Withdrawal" class="button butefct"> <br><br>
+                    <!-- <input type="submit" value="Deposit" class="button button1 butefct" onclick="Bank.deposit()"> <br><br> -->
+                </form>
+            </div>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>

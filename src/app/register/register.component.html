@@ -4,19 +4,20 @@
         <div class="col-4">
 
             <div class="main">
+                <form (ngSubmit)="register()">
                 <h4 style="font-size: 20px;" class="h1">Welcome to Yes Bank</h4>
                 <h4 style="font-size: 20px; color: #6c757d;">Registeration page</h4><br>
 
-                <input id="unname" type="text" class="text" placeholder="User name" [(ngModel)]="uname"><br><br>
+                <input id="unname" type="text" class="text" placeholder="User name" [(ngModel)]="uname" name="username"><br><br>
 
-                <input id="accnotext" type="text" class="text" placeholder="Account number" [(ngModel)]="acno"><br><br>
+                <input id="accnotext" type="text" class="text" placeholder="Account number" [(ngModel)]="acno" name="account"><br><br>
 
-                <input id="pwdtext" type="password" class="text" placeholder="Password" [(ngModel)]="pswd"><br> <br>
+                <input id="pwdtext" type="password" class="text" placeholder="Password" [(ngModel)]="pswd" name="password"><br> <br>
 
-                <input type="submit" value="Register" class="button butefct" (click)="register()"> <br>
+                <input type="submit" value="Register" class="button butefct"> <br>
                 <a class="textfp" routerLink="">Log In</a>
                 <div class="line"></div>
-
+            </form>
             </div>
         </div>
         <div class="col-4"></div>

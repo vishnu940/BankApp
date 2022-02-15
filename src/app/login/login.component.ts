@@ -28,22 +28,29 @@ export class LoginComponent implements OnInit {
    }
 
   login(){
-    var accountnumber=this.acno
-    var password=this.pswd
+    // var accountnumber=this.acno
+    // var password=this.pswd
 
-    let dataset=this.dataservice.account_details
+    // let dataset=this.dataservice.account_details
     
-    if(accountnumber in dataset){
-      if(password == dataset[accountnumber]['password']){
-        window.alert("Login success")
-        this.router.navigateByUrl('home')
-      }
-      else{
-        window.alert("Incorrect account number or password")
-      }
-    }
-    else{
-      window.alert("Account number does not exist")
+    // if(accountnumber in dataset){
+    //   if(password == dataset[accountnumber]['password']){
+    //     window.alert("Login success")
+    //     this.router.navigateByUrl('home')
+    //   }
+    //   else{
+    //     window.alert("Incorrect account number or password")
+    //   }
+    // }
+    // else{
+    //   window.alert("Account number does not exist")
+    // }
+    var accno=this.acno
+    var pwd=this.pswd
+    let reuslt=this.dataservice.login(accno,pwd)
+    if(reuslt){
+      window.alert('Login successfull')
+      this.router.navigateByUrl('home')
     }
   }
   Registerlink()
