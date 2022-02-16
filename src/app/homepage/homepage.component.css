@@ -117,3 +117,9 @@ line-height: 1.34;
     top:10px;
     float: right;
 }
+.error{
+    color: red;
+}
+.head{
+    text-align: center;
+}

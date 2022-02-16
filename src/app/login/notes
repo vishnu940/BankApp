@@ -28,5 +28,24 @@
 
                             7. Model driven angular forms
 
+                                A: Reactive forms (ReactiveFormsModule)
+                                
+                                    A.1 Form Group
+
+                                    A.2 Form Array
+
+                                    A.3 Form Control
+
+                            8. Angular Directives
+                                A: Component Directives
+
+                                B: Structural Directives
+                                    B.1 *ngIf="condition"
+
+                                    B.2 *ngFor
+
+                                    B.3 *ngSwitch
+
+
 
  

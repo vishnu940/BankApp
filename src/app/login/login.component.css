@@ -118,3 +118,6 @@ line-height: 1.34;
     display: block;
     margin: auto;
 }
+.error{
+    color: red;
+}

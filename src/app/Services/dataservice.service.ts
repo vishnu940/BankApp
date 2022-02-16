@@ -5,6 +5,8 @@ import { Injectable } from '@angular/core';
 })
 export class DataserviceService {
 
+  currentUser=''
+  
   account_details: any = {
     1000: { name: "ajay", accno: 1000, password: "testone", amount: 5000 },
     1001: { uname: "vijay", accno: 1001, password: "testtwo", amount: 3000 },
@@ -34,6 +36,7 @@ export class DataserviceService {
     let dataset = this.account_details
     if (accno in dataset) {
       if (psswd == dataset[accno]['password']) {
+        this.currentUser=dataset[accno]['name']
         return true
       }
       else {

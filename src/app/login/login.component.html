@@ -4,15 +4,17 @@
         <div class="col-4">
 
             <div class="main">
-                <form (ngSubmit)="login()">
+                <form [formGroup]="loginForm" (ngSubmit)="login()">
                 <h4 style="font-size: 20px;" class="h1">Welcome to Yes Bank</h4>
                 <h4 style="font-size: 20px; color: #6c757d;">{{lbl}}</h4><br>
 
                 <!-- <input id="accnotext" type="text" class="text" placeholder="Account number" [value]="account"><br><br> -->
 
-                <input id="accnotext" type="text" class="text" placeholder="Account number" [(ngModel)]="acno" name="account"><br><br>
+                <input id="accnotext" type="text" class="text" placeholder="Account number" formControlName="accno" name="account">
+                <div class="error" *ngIf="(loginForm.get('accno')?.touched || loginForm.get('accno')?.dirty) && loginForm.get('accno')?.errors">Invalid account</div><br><br>
 
-                <input id="pwdtext" type="password" class="text" placeholder="Password" [(ngModel)]="pswd" name="password"><br> <br>
+                <input id="pwdtext" type="password" class="text" placeholder="Password" formControlName="passwd" name="password">
+                <div class="error" *ngIf="(loginForm.get('passwd')?.touched || loginForm.get('passwd')?.dirty) && loginForm.get('passwd')?.errors">Invalid password</div><br><br>
 
                 <input type="submit" value="Log In" class="button butefct"> <br>
                 <a class="textfp" href="#">Forgotten password?</a>

@@ -2,22 +2,29 @@
     <div class="row">
         <div class="col-4"></div>
         <div class="col-4">
-
             <div class="main">
-                <form (ngSubmit)="register()">
-                <h4 style="font-size: 20px;" class="h1">Welcome to Yes Bank</h4>
-                <h4 style="font-size: 20px; color: #6c757d;">Registeration page</h4><br>
-
-                <input id="unname" type="text" class="text" placeholder="User name" [(ngModel)]="uname" name="username"><br><br>
-
-                <input id="accnotext" type="text" class="text" placeholder="Account number" [(ngModel)]="acno" name="account"><br><br>
-
-                <input id="pwdtext" type="password" class="text" placeholder="Password" [(ngModel)]="pswd" name="password"><br> <br>
-
-                <input type="submit" value="Register" class="button butefct"> <br>
-                <a class="textfp" routerLink="">Log In</a>
-                <div class="line"></div>
-            </form>
+                <form [formGroup]="registerForm" (ngSubmit)="register()">
+                    <h4 style="font-size: 20px;" class="h1">Welcome to Yes Bank</h4>
+                    <h4 style="font-size: 20px; color: #6c757d;">Registeration page</h4><br>
+                    <input id="unname" type="text" class="text" placeholder="User name" formControlName="uname"
+                        name="username">
+                    <div class="error"
+                        *ngIf="(registerForm.get('uname')?.touched || registerForm.get('uname')?.dirty) && registerForm.get('uname')?.errors">
+                        Invalid username</div><br><br>
+                    <input id="accnotext" type="text" class="text" placeholder="Account number" formControlName="acno"
+                        name="account">
+                    <div class="error"
+                        *ngIf="(registerForm.get('acno')?.touched || registerForm.get('acno')?.dirty) && registerForm.get('acno')?.errors">
+                        Invalid account</div><br><br>
+                    <input id="pwdtext" type="password" class="text" placeholder="Password" formControlName="pswd"
+                        name="password">
+                    <div class="error"
+                        *ngIf="(registerForm.get('pswd')?.touched || registerForm.get('pswd')?.dirty) && registerForm.get('pswd')?.errors">
+                        Invalid password</div><br> <br>
+                    <input type="submit" value="Register" class="button butefct"> <br>
+                    <a class="textfp" routerLink="">Log In</a>
+                    <div class="line"></div>
+                </form>
             </div>
         </div>
         <div class="col-4"></div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataserviceService } from '../Services/dataservice.service';
 
@@ -15,7 +16,15 @@ export class LoginComponent implements OnInit {
   acno=""
   pswd=""
 
-  constructor(private router:Router,private dataservice:DataserviceService) { }
+  loginForm=this.fb.group({
+    accno:['',[Validators.required,Validators.pattern('[0-9]*')]],
+    passwd:['',[Validators.required,Validators.pattern('[a-zA-Z0-9]*')]]
+  })
+
+  constructor(private router:Router,
+    private dataservice:DataserviceService,
+    private fb:FormBuilder
+    ) { }
 
   ngOnInit(): void {
   }
@@ -45,12 +54,20 @@ export class LoginComponent implements OnInit {
     // else{
     //   window.alert("Account number does not exist")
     // }
-    var accno=this.acno
-    var pwd=this.pswd
-    let reuslt=this.dataservice.login(accno,pwd)
-    if(reuslt){
-      window.alert('Login successfull')
-      this.router.navigateByUrl('home')
+    // var accno=this.acno
+    // var pwd=this.pswd
+    if(this.loginForm.get('accno')?.errors){
+      window.alert('Invalid form')
+    }
+    var acno=this.loginForm.value.accno
+    var pwd=this.loginForm.value.passwd
+    
+    if(this.loginForm.valid){
+      let reuslt=this.dataservice.login(acno,pwd)
+      if(reuslt){
+        window.alert('Login successfull')
+        this.router.navigateByUrl('home')
+      }
     }
   }
   Registerlink()
