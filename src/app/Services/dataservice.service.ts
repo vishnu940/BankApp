@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class DataserviceService {
 
-  currentUser=''
+  currentUser=""
   
   account_details: any = {
     1000: { name: "ajay", accno: 1000, password: "testone", amount: 5000 },
@@ -14,7 +14,26 @@ export class DataserviceService {
     1003: { uname: "ravi", accno: 1003, password: "testfour", amount: 10000 },
   }
 
-  constructor() { }
+  constructor() {
+    this.getDetails()
+   }
+
+
+  saveDetails(){
+    localStorage.setItem("account_details",JSON.stringify(this.account_details))
+    if(this.currentUser){
+      localStorage.setItem("currentUser",JSON.stringify(this.currentUser))
+    }
+  }
+
+  getDetails(){
+    if(localStorage.getItem("account_details")){
+      this.account_details=JSON.parse(localStorage.getItem("account_details") || '')
+    }
+    if(localStorage.getItem("currentUser")){
+      this.currentUser=JSON.parse(localStorage.getItem("currentUser") || '')
+    }
+  }
 
   register(name: any, accno: any, password: any) {
     let dataset = this.account_details
@@ -28,6 +47,7 @@ export class DataserviceService {
         password,
         amount: 0
       }
+      this.saveDetails()
       return true
     }
   }
@@ -37,6 +57,7 @@ export class DataserviceService {
     if (accno in dataset) {
       if (psswd == dataset[accno]['password']) {
         this.currentUser=dataset[accno]['name']
+        this.saveDetails()
         return true
       }
       else {
@@ -56,6 +77,7 @@ export class DataserviceService {
     if(accno in data){
       if(pwd == data[accno]['password']){
         data[accno]['amount'] += amount
+        this.saveDetails()
         return data[accno]['amount']
       }
       else{
@@ -76,6 +98,7 @@ export class DataserviceService {
       if(pwd == data[accno]['password']){
         if(data[accno]['amount']>=amount){
           data[accno]['amount'] -= amount
+          this.saveDetails()
           return data[accno]['amount']
         }
         else{

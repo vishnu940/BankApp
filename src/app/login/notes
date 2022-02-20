@@ -24,9 +24,9 @@
 
                             5. Services
 
-                            6. Template driven angular forms
+                            6. Template driven angular forms(Angular forms)
 
-                            7. Model driven angular forms
+                            7. Model driven angular forms(Angular forms)
 
                                 A: Reactive forms (ReactiveFormsModule)
                                 
@@ -45,6 +45,16 @@
                                     B.2 *ngFor
 
                                     B.3 *ngSwitch
+
+                            9. Local storage (storing data in browser)
+
+                                A setItem - To store value in local storage
+
+                                B getItem - To retrive a valu from local storage
+
+                                C removeItem - To remove an item from local storage
+
+                            
 
 
 
