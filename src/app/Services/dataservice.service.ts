@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class DataserviceService {
 
   currentUser=""
+  currentAccno=""
   
   account_details: any = {
     1000: { name: "ajay", accno: 1000, password: "testone", amount: 5000 },
@@ -22,7 +23,10 @@ export class DataserviceService {
   saveDetails(){
     localStorage.setItem("account_details",JSON.stringify(this.account_details))
     if(this.currentUser){
-      localStorage.setItem("currentUser",JSON.stringify(this.currentUser))
+      localStorage.setItem("currentUser",JSON.stringify(this.currentUser)) 
+    }
+    if(this.currentAccno){
+      localStorage.setItem("currentAccno",JSON.stringify(this.currentAccno))
     }
   }
 
@@ -32,6 +36,9 @@ export class DataserviceService {
     }
     if(localStorage.getItem("currentUser")){
       this.currentUser=JSON.parse(localStorage.getItem("currentUser") || '')
+    }
+    if(localStorage.getItem("currentAccno")){
+      this.currentAccno=JSON.parse(localStorage.getItem("currentAccno") || '')
     }
   }
 
@@ -57,6 +64,7 @@ export class DataserviceService {
     if (accno in dataset) {
       if (psswd == dataset[accno]['password']) {
         this.currentUser=dataset[accno]['name']
+        this.currentAccno=accno
         this.saveDetails()
         return true
       }

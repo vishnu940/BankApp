@@ -54,6 +54,16 @@
 
                                 C removeItem - To remove an item from local storage
 
+                            10. Data communication
+
+                                A parent to child data sharing
+
+                                    A.1 @Input() - parent to child data sharing
+
+                                B child to parent data sharing
+                                
+                                     B.1 @Output() - child to parent data sharing
+
                             
 
 

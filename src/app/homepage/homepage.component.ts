@@ -30,6 +30,7 @@ export class HomepageComponent implements OnInit {
   })
 
   Username=this.dataservice.currentUser
+  getaccno=""
 
   constructor(private dataservice: DataserviceService, private fb: FormBuilder) { }
 
@@ -67,6 +68,16 @@ export class HomepageComponent implements OnInit {
     else{
       window.alert('Invalid form')
     }
+  }
+
+  DeleteAccount(){
+    // window.alert('Delete clicked')
+    this.getaccno=this.dataservice.currentAccno
+    // console.log(this.getaccno,'acc');
+  }
+
+  onDelete(event:any){
+    window.alert('messege from parent')
   }
 
 }

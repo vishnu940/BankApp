@@ -1,0 +1,15 @@
+<div class="container" id="body" *ngIf="item">
+    <div class="row">
+        <div class="col-sm-12">
+            <p>Are you sure you want to delete this account? {{item}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <button type="submit" class="btn btn-outline-danger" (click)="delete()">Delete</button>
+        </div>
+        <div class="col-6">
+            <button type="submit" class="btn btn-outline-warning" (click)="cancel()">Cancel</button>
+        </div>
+    </div>
+</div>

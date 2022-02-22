@@ -123,3 +123,8 @@ line-height: 1.34;
 .head{
     text-align: center;
 }
+.dlt{
+    width: 80%;
+    display: block;
+    margin: auto;
+}
