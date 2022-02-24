@@ -1,5 +1,5 @@
 <div class="head">
-    <h3>Welcome {{Username}}</h3></div>
+    <h3 [ngStyle]="{'color':'#f8f9fa','backgroundColor':'#343a40'}">Welcome {{Username}}</h3></div>
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
@@ -12,8 +12,8 @@
         <div class="col-4"></div>
         <div class="col-4">
 
-            <div class="main">
-                <h4>Deposit Amount</h4><br>
+            <div class="main" [ngClass]="getaccno ? 'delete' : ''">
+                <h4 appHighlight>Deposit Amount</h4><br>
                 <form [formGroup]="depositForm" (ngSubmit)="deposit()">
                     <input id="log" type="text" class="text" placeholder="Account number" name="account"
                         formControlName="accno">
@@ -42,8 +42,8 @@
     <div class="row">
         <div class="col-4"></div>
         <div class="col-4">
-            <div class="main">
-                <h4>withdraw Amount</h4><br>
+            <div class="main" [ngClass]="getaccno ? 'delete' : ''">
+                <h4 appHighlight>withdraw Amount</h4><br>
                 <form [formGroup]="withdrawForm" (ngSubmit)="withdraw()">
                     <input id="log" type="text" class="text" placeholder="Account number" name="wacno"
                     formControlName="waccno">
@@ -64,7 +64,7 @@
                     <!-- <input type="submit" value="Deposit" class="button button1 butefct" onclick="Bank.deposit()"> <br><br> -->
                 </form>
             </div><br><br>
-            <app-delete-account (onDelete)="onDelete($event)" [item]="getaccno"></app-delete-account><br>
+            <app-delete-account (onCancel)="onCancel()" (onDelete)="onDelete($event)" [item]="getaccno"></app-delete-account><br>
             <input type="submit" value="Delete Account" (click)="DeleteAccount()" class="button button1 butefct dlt">
         </div>
         <div class="col-4"></div>

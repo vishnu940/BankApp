@@ -46,6 +46,17 @@
 
                                     B.3 *ngSwitch
 
+                                C: Attribute Directives
+
+                                    C.1 Inbuilt attribute directives
+                                     
+                                     c.1.A [ngClass] : used to style component using conditions
+
+                                     c.1.B [ngStyle]:
+
+                                    c.2 Userdefined attribute directives
+                                       used to create custom directives for styling
+
                             9. Local storage (storing data in browser)
 
                                 A setItem - To store value in local storage

@@ -14,6 +14,8 @@ export class DeleteAccountComponent implements OnInit {
   @Input() item:any
 
   @Output() onDelete=new EventEmitter()
+  
+  @Output() onCancel=new EventEmitter()
 
   constructor() { }
 
@@ -21,7 +23,7 @@ export class DeleteAccountComponent implements OnInit {
   }
 
   cancel(){
-   
+   this.onCancel.emit()
   }
 
   delete(){

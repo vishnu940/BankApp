@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { DataserviceService } from '../Services/dataservice.service';
 
 @Component({
@@ -32,7 +33,7 @@ export class HomepageComponent implements OnInit {
   Username=this.dataservice.currentUser
   getaccno=""
 
-  constructor(private dataservice: DataserviceService, private fb: FormBuilder) { }
+  constructor(private dataservice: DataserviceService, private fb: FormBuilder,private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -77,7 +78,19 @@ export class HomepageComponent implements OnInit {
   }
 
   onDelete(event:any){
-    window.alert('messege from parent')
+    // console.log(event,'event');
+    // window.alert('messege from parent')
+    var result=this.dataservice.deleteAccountDetails(this.getaccno)
+    if(result){
+      window.alert("Account deleted")
+      this.router.navigateByUrl('')
+    }
+    else{
+      window.alert('Network error')
+    }
+  }
+  onCancel(){
+    this.getaccno=''
   }
 
 }

@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { DeleteAccountComponent } from './delete-account/delete-account.component';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { DeleteAccountComponent } from './delete-account/delete-account.componen
     LoginComponent,
     RegisterComponent,
     HomepageComponent,
-    DeleteAccountComponent
+    DeleteAccountComponent,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,

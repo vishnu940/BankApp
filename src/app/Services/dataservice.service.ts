@@ -124,4 +124,14 @@ export class DataserviceService {
     }
   }
 
+  deleteAccountDetails(accno:any){
+    if(this.currentAccno == accno){
+      localStorage.removeItem("currentAccno")
+      return true
+    }
+    else{
+      return false
+    }
+  }
+
 }

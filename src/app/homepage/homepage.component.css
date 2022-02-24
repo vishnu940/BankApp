@@ -128,3 +128,8 @@ line-height: 1.34;
     display: block;
     margin: auto;
 }
+.delete{
+    background-color: grey;
+    opacity: 0.2;
+    pointer-events: none;
+}
