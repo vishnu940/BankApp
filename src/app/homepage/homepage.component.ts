@@ -33,6 +33,8 @@ export class HomepageComponent implements OnInit {
   Username=this.dataservice.currentUser
   getaccno=""
 
+  logdate=new Date()
+
   constructor(private dataservice: DataserviceService, private fb: FormBuilder,private router:Router) { }
 
   ngOnInit(): void {

@@ -57,6 +57,9 @@
                                     c.2 Userdefined attribute directives
                                        used to create custom directives for styling
 
+                                       use the ElementRef to style a specific element:
+                                       element.nativeElement.style.'style'
+
                             9. Local storage (storing data in browser)
 
                                 A setItem - To store value in local storage
@@ -74,6 +77,21 @@
                                 B child to parent data sharing
                                 
                                      B.1 @Output() - child to parent data sharing
+                                     
+                                     B.2 EventEmitter
+
+                            11. Angular pipes
+
+                                 11.A Syntax - expression | pipe operator [: pipe arguement] 
+                                 (| represents pipe symbol)
+
+                            12. Angular Animations
+
+                                
+
+
+
+                            
 
                             
 
